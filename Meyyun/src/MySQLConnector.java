@@ -2,13 +2,13 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class MySQLConnector {
 
     public static void main(String[] args) {
-        String url = "jdbc:mysql://localhost:3306/your_database_name";
+        String url = "jdbc:mysql://localhost:3306/test";
         String user = "your_username";
         String password = "your_password";
 
