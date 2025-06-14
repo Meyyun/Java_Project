@@ -9,8 +9,8 @@ public class MySQLConnector {
 
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/test";
-        String user = "your_username";
-        String password = "your_password";
+        String user = "root";
+        String password = "Rith120223";
 
         try {
             // Load MySQL JDBC Driver (optional for newer versions)
@@ -22,10 +22,15 @@ public class MySQLConnector {
 
             // Example query
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM your_table");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM user");
 
             while (rs.next()) {
-                System.out.println("Row: " + rs.getString(1)); // Adjust column index
+                // Print all columns for each row
+                int id = rs.getInt(1);
+                String name = rs.getString(2);
+                String email = rs.getString(3);
+                int age = rs.getInt(4);
+                System.out.println("ID: " + id + ", Name: " + name + ", Email: " + email + ", Age: " + age);
             }
 
             // Close resources
